@@ -9,11 +9,11 @@ const greeting = document.getElementById('greeting');
 const hour = new Date().getHours();
 
 if (hour < 12) {
-    greeting.textContent = 'Доброго ранку, я Олексій!';
+    greeting.textContent = 'Доброго ранку, я Олександр!';
 } else if (hour < 18) {
-    greeting.textContent = 'Добрий день, я Олексій!';
+    greeting.textContent = 'Добрий день, я Олександр!';
 } else {
-    greeting.textContent = 'Добрий вечір, я Олексій!';
+    greeting.textContent = 'Добрий вечір, я Олександр!';
 }
 
 // Підсвічування активного пункту меню
