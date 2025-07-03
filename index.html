@@ -7,22 +7,22 @@
 </head>
 <body>
     <header>
-        <h1>Привіт, я Олексій!</h1>
+        <h1 id="greeting">Привіт, я Олексій!</h1>
         <nav>
-            <a href="#about">Про мене</a>
-            <a href="#projects">Проекти</a>
-            <a href="#contact">Контакти</a>
+            <a href="#about" class="nav-link">Про мене</a>
+            <a href="#projects" class="nav-link">Проекти</a>
+            <a href="#contact" class="nav-link">Контакти</a>
         </nav>
         <button id="theme-toggle">Змінити тему</button>
     </header>
 
     <main>
-        <section id="about">
+        <section id="about" class="section">
             <h2>Про мене</h2>
             <p>Я вчуся створювати сайти, і це мій перший блог-портфоліо.</p>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="section">
             <h2>Мої проекти</h2>
             <ul>
                 <li>Цей сайт</li>
@@ -30,9 +30,17 @@
             </ul>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="section">
             <h2>Контакти</h2>
-            <p>Email: example@example.com</p>
+            <form id="contact-form">
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" required>
+
+                <label for="message">Повідомлення:</label>
+                <textarea id="message" required></textarea>
+
+                <button type="submit">Відправити</button>
+            </form>
         </section>
     </main>
 
@@ -43,3 +51,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
