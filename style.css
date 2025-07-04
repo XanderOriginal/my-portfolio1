@@ -1,3 +1,4 @@
+/* --- Базові стилі --- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -61,38 +62,41 @@ nav a.active {
     overflow: hidden;
 }
 
-.slider .icon-sun,
-.slider .icon-moon {
+.slider .icon-moon,
+.slider .icon-sun {
     pointer-events: none;
     transition: opacity 0.3s ease;
     position: relative;
     z-index: 1;
+    opacity: 1;
     font-size: 18px;
 }
 
-/* За замовчуванням сонце видно, місяць схований */
-.slider .icon-sun {
-    color: #f39c12;
-    opacity: 1;
-}
-
+/* Початково: світла тема, сонце видно, місяць схований */
 .slider .icon-moon {
     color: #f1c40f;
     opacity: 0;
 }
 
-.theme-switch input:checked + .slider {
-    background-color: #4a4a4a;
+.slider .icon-sun {
+    color: #f39c12;
+    opacity: 1;
 }
 
-.theme-switch input:checked + .slider .icon-sun {
-    opacity: 0;
+/* При перемиканні: темна тема */
+.theme-switch input:checked + .slider {
+    background-color: #4a4a4a;
 }
 
 .theme-switch input:checked + .slider .icon-moon {
     opacity: 1;
 }
 
+.theme-switch input:checked + .slider .icon-sun {
+    opacity: 0;
+}
+
+/* Рухоме коло */
 .slider::before {
     content: "";
     position: absolute;
@@ -107,11 +111,14 @@ nav a.active {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Переміщення кола */
 .theme-switch input:checked + .slider::before {
     transform: translateX(24px);
 }
-/* --- Кінець стилів для перемикача --- */
 
+/* --- Кінець стилів перемикача --- */
+
+/* Темна тема */
 .dark-theme {
     background-color: #121212;
     color: white;
@@ -121,11 +128,13 @@ nav a.active {
     background-color: #333;
 }
 
+/* Основні секції */
 .section {
     padding: 50px 20px;
     min-height: 100vh;
 }
 
+/* Форми */
 form {
     display: flex;
     flex-direction: column;
@@ -146,6 +155,7 @@ form textarea {
     resize: vertical;
 }
 
+/* Кнопка повернення вгору */
 #back-to-top {
     position: fixed;
     bottom: 30px;
@@ -158,7 +168,7 @@ form textarea {
     height: 45px;
     font-size: 24px;
     cursor: pointer;
-    display: none; /* спочатку прихована */
+    display: none; /* Початково прихована */
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
