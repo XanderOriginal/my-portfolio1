@@ -1,4 +1,3 @@
-/* --- Базові стилі --- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -22,8 +21,7 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover,
-nav a.active {
+nav a:hover, nav a.active {
     color: #007bff;
 }
 
@@ -72,31 +70,28 @@ nav a.active {
     font-size: 18px;
 }
 
-/* Початково: світла тема, сонце видно, місяць схований */
 .slider .icon-moon {
     color: #f1c40f;
-    opacity: 0;
+    opacity: 1; /* Місяць видно на світлій темі */
 }
 
 .slider .icon-sun {
     color: #f39c12;
-    opacity: 1;
+    opacity: 0; /* Сонце сховане на світлій темі */
 }
 
-/* При перемиканні: темна тема */
 .theme-switch input:checked + .slider {
     background-color: #4a4a4a;
 }
 
 .theme-switch input:checked + .slider .icon-moon {
-    opacity: 1;
+    opacity: 0; /* Місяць зникає на темній темі */
 }
 
 .theme-switch input:checked + .slider .icon-sun {
-    opacity: 0;
+    opacity: 1; /* Сонце з’являється на темній темі */
 }
 
-/* Рухоме коло */
 .slider::before {
     content: "";
     position: absolute;
@@ -108,17 +103,14 @@ nav a.active {
     border-radius: 50%;
     transition: transform 0.3s ease;
     z-index: 2;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-/* Переміщення кола */
 .theme-switch input:checked + .slider::before {
     transform: translateX(24px);
 }
+/* --- Кінець стилів для перемикача --- */
 
-/* --- Кінець стилів перемикача --- */
-
-/* Темна тема */
 .dark-theme {
     background-color: #121212;
     color: white;
@@ -128,21 +120,18 @@ nav a.active {
     background-color: #333;
 }
 
-/* Основні секції */
 .section {
     padding: 50px 20px;
     min-height: 100vh;
 }
 
-/* Форми */
 form {
     display: flex;
     flex-direction: column;
     max-width: 400px;
 }
 
-form input,
-form textarea {
+form input, form textarea {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
@@ -154,6 +143,7 @@ form textarea {
     min-height: 150px;
     resize: vertical;
 }
+
 
 /* Кнопка повернення вгору */
 #back-to-top {
