@@ -60,40 +60,45 @@ nav a:hover, nav a.active {
     overflow: hidden;
 }
 
-.slider .icon-sun,
-.slider .icon-moon {
+.slider .icon-moon,
+.slider .icon-sun {
     pointer-events: none;
     transition: opacity 0.3s ease;
-    color: #f39c12;
     position: relative;
     z-index: 1;
-    opacity: 1; /* За замовчуванням сонце видно */
+    opacity: 1;
+    font-size: 18px;
 }
 
 .slider .icon-moon {
-    opacity: 0; /* Місяць схований на світлій темі */
     color: #f1c40f;
+    opacity: 1; /* Місяць видно на світлій темі */
+}
+
+.slider .icon-sun {
+    color: #f39c12;
+    opacity: 0; /* Сонце сховане на світлій темі */
 }
 
 .theme-switch input:checked + .slider {
     background-color: #4a4a4a;
 }
 
-.theme-switch input:checked + .slider .icon-sun {
-    opacity: 0; /* Сонце зникає на темній темі */
+.theme-switch input:checked + .slider .icon-moon {
+    opacity: 0; /* Місяць зникає на темній темі */
 }
 
-.theme-switch input:checked + .slider .icon-moon {
-    opacity: 1; /* Місяць з’являється на темній темі */
+.theme-switch input:checked + .slider .icon-sun {
+    opacity: 1; /* Сонце з’являється на темній темі */
 }
 
 .slider::before {
     content: "";
     position: absolute;
-    height: 22px;
-    width: 22px;
-    left: 2px;
-    bottom: 2px;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
     background-color: white;
     border-radius: 50%;
     transition: transform 0.3s ease;
