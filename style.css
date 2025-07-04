@@ -1,8 +1,11 @@
+/* --- Базові стилі сторінки --- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     transition: background-color 0.5s, color 0.5s;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 header {
@@ -24,6 +27,31 @@ nav a {
 nav a:hover,
 nav a.active {
     color: #007bff;
+}
+
+.section {
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
 }
 
 /* --- Стилі для перемикача теми --- */
@@ -56,7 +84,6 @@ nav a.active {
     justify-content: space-between;
     padding: 0 6px;
     box-sizing: border-box;
-    font-size: 16px;
     user-select: none;
     overflow: hidden;
 }
@@ -64,13 +91,17 @@ nav a.active {
 .slider .icon-moon,
 .slider .icon-sun {
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
     transition: opacity 0.3s ease;
     position: relative;
     z-index: 1;
-    font-size: 18px;
 }
 
-/* ПРАВИЛЬНИЙ СТАН: Світла тема — Сонце видно, Місяць схований */
 .slider .icon-moon {
     color: #f1c40f;
     opacity: 0; /* Місяць схований на світлій темі */
@@ -85,9 +116,8 @@ nav a.active {
     background-color: #4a4a4a;
 }
 
-/* ПРАВИЛЬНИЙ СТАН: Темна тема — Місяць видно, Сонце сховане */
 .theme-switch input:checked + .slider .icon-moon {
-    opacity: 1; /* Місяць з'являється на темній темі */
+    opacity: 1; /* Місяць з’являється на темній темі */
 }
 
 .theme-switch input:checked + .slider .icon-sun {
@@ -113,6 +143,7 @@ nav a.active {
 }
 /* --- Кінець стилів для перемикача --- */
 
+/* --- Темна тема --- */
 .dark-theme {
     background-color: #121212;
     color: white;
@@ -122,32 +153,7 @@ nav a.active {
     background-color: #333;
 }
 
-.section {
-    padding: 50px 20px;
-    min-height: 100vh;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-}
-
-form input,
-form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-/* Кнопка повернення вгору */
+/* --- Кнопка "До верху" --- */
 #back-to-top {
     position: fixed;
     bottom: 30px;
