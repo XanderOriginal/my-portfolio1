@@ -21,7 +21,8 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
     color: #007bff;
 }
 
@@ -66,30 +67,31 @@ nav a:hover, nav a.active {
     transition: opacity 0.3s ease;
     position: relative;
     z-index: 1;
-    opacity: 1;
     font-size: 18px;
 }
 
+/* ПРАВИЛЬНИЙ СТАН: Світла тема — Сонце видно, Місяць схований */
 .slider .icon-moon {
     color: #f1c40f;
-    opacity: 1; /* Місяць видно на світлій темі */
+    opacity: 0; /* Місяць схований на світлій темі */
 }
 
 .slider .icon-sun {
     color: #f39c12;
-    opacity: 0; /* Сонце сховане на світлій темі */
+    opacity: 1; /* Сонце видно на світлій темі */
 }
 
 .theme-switch input:checked + .slider {
     background-color: #4a4a4a;
 }
 
+/* ПРАВИЛЬНИЙ СТАН: Темна тема — Місяць видно, Сонце сховане */
 .theme-switch input:checked + .slider .icon-moon {
-    opacity: 0; /* Місяць зникає на темній темі */
+    opacity: 1; /* Місяць з'являється на темній темі */
 }
 
 .theme-switch input:checked + .slider .icon-sun {
-    opacity: 1; /* Сонце з’являється на темній темі */
+    opacity: 0; /* Сонце зникає на темній темі */
 }
 
 .slider::before {
@@ -103,7 +105,7 @@ nav a:hover, nav a.active {
     border-radius: 50%;
     transition: transform 0.3s ease;
     z-index: 2;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .theme-switch input:checked + .slider::before {
@@ -131,7 +133,8 @@ form {
     max-width: 400px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
@@ -143,7 +146,6 @@ form textarea {
     min-height: 150px;
     resize: vertical;
 }
-
 
 /* Кнопка повернення вгору */
 #back-to-top {
