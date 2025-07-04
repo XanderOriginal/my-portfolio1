@@ -57,13 +57,16 @@ nav a:hover, nav a.active {
     box-sizing: border-box;
     font-size: 18px;
     user-select: none;
+    overflow: hidden; /* Щоб нічого не виходило за межі */
 }
 
 .slider .icon-sun,
 .slider .icon-moon {
     pointer-events: none;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s ease;
     color: #f39c12;
+    position: relative;
+    z-index: 1;
 }
 
 .slider .icon-moon {
@@ -76,23 +79,25 @@ nav a:hover, nav a.active {
 }
 
 .theme-switch input:checked + .slider .icon-sun {
-    opacity: 0.5;
+    opacity: 0; /* Сонце плавно зникає */
 }
 
 .theme-switch input:checked + .slider .icon-moon {
-    opacity: 1;
+    opacity: 1; /* Місяць з’являється */
 }
 
 .slider::before {
     content: "";
     position: absolute;
-    height: 24px;
-    width: 24px;
-    left: 3px;
-    bottom: 3px;
+    height: 30px;  /* Трохи більший круг, щоб повністю перекривати іконки */
+    width: 30px;
+    left: 0;
+    bottom: 0;
     background-color: white;
     border-radius: 50%;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+    z-index: 2; /* Поверх іконок */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .theme-switch input:checked + .slider::before {
