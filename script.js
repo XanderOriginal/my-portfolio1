@@ -66,18 +66,19 @@ window.addEventListener('DOMContentLoaded', () => {
         alert('Дякуємо за ваше повідомлення!');
         contactForm.reset();
     });
+
+    // Кнопка "До верху"
     const backToTopBtn = document.getElementById('back-to-top');
 
-window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 300) {
-    backToTopBtn.style.display = 'flex';  // показуємо кнопку
-  } else {
-    backToTopBtn.style.display = 'none';  // ховаємо кнопку
-  }
-});
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'flex'; // показуємо кнопку
+        } else {
+            backToTopBtn.style.display = 'none'; // ховаємо кнопку
+        }
+    });
 
-backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
