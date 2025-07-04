@@ -1,22 +1,22 @@
-// Зміна теми
 const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
 
-    // Зберігаємо вибір у LocalStorage
-    if (document.body.classList.contains('dark-theme')) {
+// Функція для встановлення теми та стану перемикача
+function setTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeToggle.checked = true;
         localStorage.setItem('theme', 'dark');
     } else {
+        document.body.classList.remove('dark-theme');
+        themeToggle.checked = false;
         localStorage.setItem('theme', 'light');
     }
-});
+}
 
-// Встановлюємо тему при завантаженні сторінки
+// При завантаженні сторінки відновлюємо тему і стан перемикача
 window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-    }
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
 
     // Вітання залежно від часу доби
     const greeting = document.getElementById('greeting');
@@ -28,6 +28,15 @@ window.addEventListener('DOMContentLoaded', () => {
         greeting.textContent = 'Добрий день, я Олександр!';
     } else {
         greeting.textContent = 'Добрий вечір, я Олександр!';
+    }
+});
+
+// Обробник зміни стану перемикача теми
+themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+        setTheme('dark');
+    } else {
+        setTheme('light');
     }
 });
 
