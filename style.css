@@ -21,7 +21,8 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
     color: #007bff;
 }
 
@@ -60,36 +61,36 @@ nav a:hover, nav a.active {
     overflow: hidden;
 }
 
-.slider .icon-moon,
-.slider .icon-sun {
+.slider .icon-sun,
+.slider .icon-moon {
     pointer-events: none;
     transition: opacity 0.3s ease;
     position: relative;
     z-index: 1;
-    opacity: 1;
     font-size: 18px;
+}
+
+/* За замовчуванням сонце видно, місяць схований */
+.slider .icon-sun {
+    color: #f39c12;
+    opacity: 1;
 }
 
 .slider .icon-moon {
     color: #f1c40f;
-    opacity: 1; /* Місяць видно на світлій темі */
-}
-
-.slider .icon-sun {
-    color: #f39c12;
-    opacity: 0; /* Сонце сховане на світлій темі */
+    opacity: 0;
 }
 
 .theme-switch input:checked + .slider {
     background-color: #4a4a4a;
 }
 
-.theme-switch input:checked + .slider .icon-moon {
-    opacity: 0; /* Місяць зникає на темній темі */
+.theme-switch input:checked + .slider .icon-sun {
+    opacity: 0;
 }
 
-.theme-switch input:checked + .slider .icon-sun {
-    opacity: 1; /* Сонце з’являється на темній темі */
+.theme-switch input:checked + .slider .icon-moon {
+    opacity: 1;
 }
 
 .slider::before {
@@ -103,7 +104,7 @@ nav a:hover, nav a.active {
     border-radius: 50%;
     transition: transform 0.3s ease;
     z-index: 2;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .theme-switch input:checked + .slider::before {
@@ -131,7 +132,8 @@ form {
     max-width: 400px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
@@ -145,25 +147,25 @@ form textarea {
 }
 
 #back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 24px;
-  cursor: pointer;
-  display: none; /* спочатку прихована */
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  transition: background-color 0.3s;
-  z-index: 1000;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* спочатку прихована */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    z-index: 1000;
 }
 
 #back-to-top:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
